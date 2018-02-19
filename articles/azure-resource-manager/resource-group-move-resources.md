@@ -186,23 +186,7 @@ To move a peered virtual network, you must first disable the virtual network pee
 You cannot move a virtual network to a different subscription if the virtual network contains a subnet with resource navigation links. For example, if a Redis Cache resource is deployed into a subnet, that subnet has a resource navigation link.
 
 ## App Service limitations
-
-The limitations for moving App Service resources differ based on whether you are moving the resources within a subscription or to a new subscription.
-
-### Moving within the same subscription
-
-When moving a Web App _within the same subscription_, you cannot move the uploaded SSL certificates. However, you can move a Web App to the new resource group without moving its uploaded SSL certificate, and your app's SSL functionality still works. 
-
-If you want to move the SSL certificate with the Web App, follow these steps:
-
-1.	Delete the uploaded certificate from the Web App.
-2.	Move the Web App.
-3.	Upload the certificate to the moved Web App.
-
-### Moving across subscriptions
-
-When moving a Web App _across subscriptions_, the following limitations apply:
-
+When moving App Service plans, the following limitations apply:
 - The destination resource group must not have any existing App Service resources. App Service resources include:
     - Web Apps
     - App Service plans
@@ -210,6 +194,20 @@ When moving a Web App _across subscriptions_, the following limitations apply:
     - App Service Environments
 - All App Service resources in the resource group must be moved together.
 - App Service resources can only be moved from the resource group in which they were originally created. If an App Service resource is no longer in its original resource group, it must be moved back to that original resource group first, and then it can be moved across subscriptions. 
+
+The limitations for moving App Service resources differ based on whether you are moving the resources within a subscription or to a new subscription.
+
+### Moving SSL certificates
+
+When moving a Web App you cannot move the uploaded SSL certificates. However, you can move a Web App to the new resource group without moving its uploaded SSL certificate, and your app's SSL functionality still works. 
+
+If you want to move the SSL certificate with the Web App, follow these steps:
+
+1.	Delete the uploaded certificate from the Web App.
+2.	Move the Web App.
+3.	Upload the certificate to the moved Web App.
+
+
 
 ## Classic deployment limitations
 
